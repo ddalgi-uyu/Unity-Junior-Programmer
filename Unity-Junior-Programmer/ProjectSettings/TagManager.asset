@@ -7,6 +7,11 @@ TagManager:
   - Dog
   - Obstacle
   - Ground
+  - Money
+  - Bomb
+  - Background
+  - Powerup
+  - Enemy
   layers:
   - Default
   - TransparentFX
