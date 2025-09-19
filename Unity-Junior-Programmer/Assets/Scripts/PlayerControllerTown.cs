@@ -29,7 +29,7 @@ public class PlayerControllerTown : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
-            playerSource.PlayOnShot(jumpSound, 1.0f);
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("Jump_trig");

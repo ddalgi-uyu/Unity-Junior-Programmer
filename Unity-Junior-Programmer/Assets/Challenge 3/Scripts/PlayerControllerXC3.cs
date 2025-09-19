@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerX : MonoBehaviour
+public class PlayerControllerXC3 : MonoBehaviour
 {
     public bool gameOver;
-
+    public AudioClip moneySound;
+    public AudioClip explodeSound;
+    public AudioClip bounceSound;
     public float floatForce;
-    private float gravityModifier = 1.5f;
-    private Rigidbody playerRb;
-
+    public float bounceForce;
     public ParticleSystem explosionParticle;
     public ParticleSystem fireworksParticle;
 
+    private float gravityModifier = 1.5f;
+    private Rigidbody playerRb;
     private AudioSource playerAudio;
-    public AudioClip moneySound;
-    public AudioClip explodeSound;
-
-
+    private float upperBound = 15f;
+    private float lowerBound = 1f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +26,26 @@ public class PlayerControllerX : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
 
         // Apply a small upward force at the start of the game
+        playerRb = GetComponent<Rigidbody>();
         playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
 
+        gameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y > upperBound)
+        {
+            transform.position = new Vector3(transform.position.x, upperBound, transform.position.z);
+            playerRb.AddForce(Vector3.down * bounceForce);
+        }
+        else if (transform.position.y <= lowerBound)
+        {
+            playerAudio.PlayOneShot(bounceSound, 1.0f);
+            playerRb.AddForce(Vector3.up * bounceForce);
+        }
+
         // While space is pressed and player is low enough, float up
         if (Input.GetKey(KeyCode.Space) && !gameOver)
         {
@@ -57,7 +71,6 @@ public class PlayerControllerX : MonoBehaviour
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
-
         }
 
     }
