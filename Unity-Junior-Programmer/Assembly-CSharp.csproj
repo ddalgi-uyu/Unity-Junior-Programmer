@@ -61,6 +61,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.57f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Course Library\_Source_Files\Scripts\DestroyAfterDelay.cs" />
     <Compile Include="Assets\Scripts\PlayerControlllerL2.cs" />
     <Compile Include="Assets\Scripts\MoveFowardL2.cs" />
     <Compile Include="Assets\Challenge 3\Scripts\MoveLeftXC3.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Challenge 2\Scripts\MoveForwardX.cs" />
     <Compile Include="Assets\Challenge 4\Scripts\PlayerControllerXC4.cs" />
     <Compile Include="Assets\Challenge 2\Scripts\PlayerControllerXC2.cs" />
+    <Compile Include="Assets\Challenge 4\Scripts\Target.cs" />
     <Compile Include="Assets\Challenge 3\_Source_Files\SpinObjectsX.cs" />
     <Compile Include="Assets\Challenge 4\Scripts\RotateCameraX.cs" />
     <Compile Include="Assets\Scripts\MoveLeft.cs" />
@@ -97,8 +99,14 @@
     <Compile Include="Assets\Challenge 3\Scripts\SpawnManagerXC3.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Course Library\Fonts\Margarine\OFL.txt" />
     <None Include="Assets\Course Library\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
+    <None Include="Assets\Course Library\Fonts\Roboto_Condensed\LICENSE.txt" />
     <None Include="Assets\Course Library\_Source_Files\_LICENSE.txt" />
+    <None Include="Assets\Course Library\Fonts\Baloo_Chettan\OFL.txt" />
+    <None Include="Assets\Course Library\Fonts\Indie_Flower\OFL.txt" />
+    <None Include="Assets\Course Library\Fonts\Exo_2\OFL.txt" />
+    <None Include="Assets\Course Library\Fonts\Oswald\OFL.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
