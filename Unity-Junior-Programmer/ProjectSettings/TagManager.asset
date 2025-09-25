@@ -12,6 +12,7 @@ TagManager:
   - Background
   - Powerup
   - Enemy
+  - Bad
   layers:
   - Default
   - TransparentFX
